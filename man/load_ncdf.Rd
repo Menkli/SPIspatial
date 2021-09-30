@@ -7,7 +7,7 @@
 load_ncdf(path, filename)
 }
 \arguments{
-\item{path}{The local path to where the nedCDF file is located}
+\item{path}{The local path to where the netCDF file is located}
 
 \item{filename}{The filename of the netCDF. Must include the ending ".nc"}
 }

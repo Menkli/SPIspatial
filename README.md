@@ -1,16 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SPIspatial
-
-<!-- badges: start -->
-
-<!-- badges: end -->
-
-The goal of SPIspatial is to … \# ncdf\_brick
-
-It generates a raster brick from a netCDF file.
-
 ## Installation
 
 You can install the released version of SPIspatial from
@@ -20,38 +10,26 @@ You can install the released version of SPIspatial from
 install.packages("SPIspatial")
 ```
 
-## Example
+# SPIspatial
 
-This is a basic example which shows you how to solve a common problem:
+This package contains three functions that should be used in consecutive
+order:
 
-``` r
-library(SPIspatial)
-## basic example code
-```
+## load\_ncdf
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+Can be used to load a netCDF file and prints its metadata to the
+console.
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+## build\_brick
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
+It builds a raster brick from the loaded netCDF. The dimensions of the
+brick (x,y,z) must be read by the user from the metadata printed by
+load\_ncdf. It populates each cell in the brick with the data contained
+in the netCDF, usually precipitation data.
 
-You can also embed plots, for example:
+## SPIspatial
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+It calculates the SPI for each timestep in every cell. When the input
+brick has 100 layers (z-dimension), the resulting SPI raster brick will
+also consist of about 100 layers (sometimes diverging due to
+parametrization).

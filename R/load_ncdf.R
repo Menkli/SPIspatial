@@ -1,7 +1,7 @@
 
 #' SPI spatial calculator
 #'
-#' @param path The local path to where the nedCDF file is located
+#' @param path The local path to where the netCDF file is located
 #' @param filename The filename of the netCDF. Must include the ending ".nc"
 
 #'

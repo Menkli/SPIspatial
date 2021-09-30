@@ -2,7 +2,7 @@
 % Please edit documentation in R/build_brick.R
 \name{build_brick}
 \alias{build_brick}
-\title{Builds a raster brick from an netCDF object}
+\title{Builds a raster brick from a netCDF list}
 \usage{
 build_brick(x, y, z)
 }
@@ -17,5 +17,5 @@ build_brick(x, y, z)
 
 }
 \description{
-Builds a raster brick from an netCDF object
+Builds a raster brick from a netCDF list
 }

@@ -3,11 +3,10 @@
 
 ## Installation
 
-You can install the released version of SPIspatial from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the released version of SPIspatial from Github with:
 
 ``` r
-install.packages("SPIspatial")
+devtools::install_github("SPIspatial")
 ```
 
 # SPIspatial
